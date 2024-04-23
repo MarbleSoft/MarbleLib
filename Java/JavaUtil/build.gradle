@@ -4,8 +4,8 @@ plugins {
 
 group 'com.mar.lib.util'
 version '0.0.1'
-if(isServer)
-    sourceCompatibility = '11'
+//if(isServer)
+//    sourceCompatibility = '11'
 
 
 dependencies {

@@ -26,9 +26,19 @@ dependencyResolutionManagement {
 
 rootProject.name = "Demo"
 include(":demo")
-include("PairView")
-project(":PairView").projectDir = file("../widget/PairView")
-//include("..:widget:PairView")
+
+val widgets = arrayOf(
+    "PairView"
+    ,"LabelView"
+//    ,"FlowLayout"
+)
+widgets.forEach {widget ->
+    include(widget)
+    project(":${widget}").projectDir = file("../widget/${widget}")
+}
+
+include("JavaUtil")
+project(":JavaUtil").projectDir = file("../../Java/JavaUtil")
 
 include("AndroidUtil")
 project(":AndroidUtil").projectDir = file("../AndroidUtil")
