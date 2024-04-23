@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">PairView</string>
+    <string name="app_name">Demo</string>
+
+    <string-array name="labels_choose_job_list">
+        <item>android开发</item>
+        <item>iOS开发</item>
+        <item>javaWeb开发</item>
+        <item>Go开发</item>
+        <item>TA的相册</item>
+    </string-array>
 </resources>

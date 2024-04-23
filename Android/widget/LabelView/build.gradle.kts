@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.marble.lib.widget.pairview"
+    namespace = "com.marble.lib.widget.labelview"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -50,6 +50,7 @@ android {
 
 dependencies {
 //    implementation(libs.androidx.appcompat)
-//    implementation(libs.material)
+    implementation(libs.material)
     implementation(libs.androidx.annotation)
+    implementation(project(":JavaUtil"))
 }
