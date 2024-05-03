@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LabelLayoutExample"
+    android:orientation="vertical">
+    <!--
+        app:llLabels="android开发|iOS开发|javaWeb开发|Go语言开发"
+        -->
+    <com.marble.lib.widget.labelview.LabelLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lineSpacing="10dp"
+        app:itemSpacing="10dp"
+        android:layout_marginTop="10dp"
+        app:llLabelsArray="@array/labels_choose_job_list"
+        app:rlvTextSize="22sp"
+        app:rlvTextColor="@android:color/white"
+        app:rlvBackgroundColor="@color/colorPrimaryDark"
+        app:rlvRoundRadius="20dp"
+        app:rlvRoundStrokeColor="@color/colorPrimary"
+        app:rlvRoundStrokeWidth="4sp"
+        app:llDefaultPaddingHorizontal="10dp"
+        app:llDefaultPaddingVertical="5dp"
+        app:llChooseMode="none"/>
+
+    <com.marble.lib.widget.labelview.LabelLayout
+        android:id="@+id/test_label_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lineSpacing="10dp"
+        app:itemSpacing="10dp"
+        android:layout_marginTop="10dp"
+        app:llChooseMode="single"/>
+
+    <com.marble.lib.widget.labelview.LabelLayout
+        android:id="@+id/test_label_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lineSpacing="10dp"
+        app:itemSpacing="10dp"
+        android:layout_marginTop="10dp"
+        app:llChooseMode="multi"
+        app:llMaxChoiceNum="4"/>
+
+    <com.marble.lib.widget.labelview.LabelLayout
+        android:id="@+id/test_label_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lineSpacing="10dp"
+        app:itemSpacing="10dp"
+        android:layout_marginTop="10dp"
+        app:llChooseMode="single"/>
+
+    <com.marble.lib.widget.labelview.LabelLayout
+        android:id="@+id/test_label_layout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lineSpacing="10dp"
+        app:itemSpacing="10dp"
+        android:layout_marginTop="10dp"
+        app:llChooseMode="multi"
+        app:llMaxChoiceNum="4"/>
+</LinearLayout>

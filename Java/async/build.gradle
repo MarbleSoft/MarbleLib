@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+group 'com.marble.lib.async'
+version '0.0.1'
+//if(isServer)
+//    sourceCompatibility = '11'
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
