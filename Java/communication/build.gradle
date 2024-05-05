@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'com.marble.lib.communication'
+version '1.0.0'
+//if(isServer)
+//    sourceCompatibility = '11'
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}

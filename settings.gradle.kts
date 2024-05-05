@@ -25,6 +25,7 @@ val javaLibPath  = "Java"
 val javaLib = arrayOf(
     "JavaUtil"
     ,"async"
+    ,"communication"
 )
 javaLib.forEach {lib ->
     include(lib)
@@ -37,6 +38,7 @@ val androidLib = arrayOf(
     ,"widgets/LabelView"
 
     ,"common/AndroidUtil"
+    ,"common/BaseComponent"
 )
 androidLib.forEach {lib ->
     val libName = lib.removePrefix("widgets/").removePrefix("common/")

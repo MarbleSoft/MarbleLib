@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-//import com.google.android.material.internal.FlowLayout;
 import com.google.android.material.internal.FlowLayout;
 import com.mar.lib.util.StrUtils;
 
@@ -144,12 +143,35 @@ public class LabelLayout extends FlowLayout implements View.OnClickListener {
         if(strLabels!=null && strLabels.length>0){
             List<LabelAttri> labels = new ArrayList<>(strLabels.length);
             for(CharSequence s:strLabels){
+                if(s==null || StrUtils.isEmpty(s.toString()))
+                    continue;
                 LabelAttri bean = LabelAttri.copy(defaultLabelConfig);
                 bean.text = s.toString();
                 labels.add(bean);
             }
             addLabels(labels,null);
         }
+    }
+
+    public void removeLabel(CharSequence strLabel){
+        if(strLabel==null || StrUtils.isEmpty(strLabel.toString()))
+            return;
+
+    }
+
+    public void addLabel(CharSequence strLabel){
+        if(strLabel==null || StrUtils.isEmpty(strLabel.toString()))
+            return;
+        LabelAttri bean = LabelAttri.copy(defaultLabelConfig);
+        bean.text = strLabel.toString();
+        addLabel(bean);
+    }
+
+    public void addLabel(LabelAttri bean){
+        if(labels==null)
+            labels = new ArrayList<>();
+        labels.add(bean);
+        addLabelView(bean,labels.size()-1);
     }
 
     public void addLabels(List<LabelAttri> labels,List<LabelAttri> selectLabels){
@@ -159,13 +181,17 @@ public class LabelLayout extends FlowLayout implements View.OnClickListener {
             removeAllViews();
             for(int i=0;i<labels.size();i++){
                 LabelAttri bean = labels.get(i);
-                RoundLabelView rlv = new RoundLabelView(getContext());
-                rlv.setLabelConfig(bean);
-                rlv.setIndex(i);
-                addView(rlv);
+                addLabelView(bean,i);
             }
         }
         checkSelectState();
+    }
+
+    protected void addLabelView(LabelAttri bean,int index){
+        RoundLabelView rlv = new RoundLabelView(getContext());
+        rlv.setLabelConfig(bean);
+        rlv.setIndex(index);
+        addView(rlv);
     }
 
     public void setChooseMode(int chooseMode,int maxChoiceNum) {
@@ -178,15 +204,16 @@ public class LabelLayout extends FlowLayout implements View.OnClickListener {
         checkSelectState();
     }
 
-    private boolean canSelect;
+//    private boolean canSelect;
     private void checkSelectState(){
-        canSelect = (chooseMode==ChooseModeSingle
-                || chooseMode==ChooseModeMulti);
+//        canSelect = (chooseMode==ChooseModeSingle
+//                || chooseMode==ChooseModeMulti);
         int childNum = getChildCount();
         for(int i=0;i<childNum;i++){
             View v = getChildAt(i);
             if(v instanceof RoundLabelView){
-                v.setOnClickListener(canSelect?this:null);
+//                v.setOnClickListener(canSelect?this:null);
+                v.setOnClickListener(this);
             }
         }
     }

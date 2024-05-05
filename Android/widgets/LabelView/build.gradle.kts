@@ -11,7 +11,7 @@ android {
 
 //        versionCode = 1
 //        versionName = "1.0.0"
-        version = "1.0.0"
+        version = "1.0.2"
         consumerProguardFiles("consumer-rules.pro")
     }
 
